@@ -1,4 +1,4 @@
-import { links, projects, skillGroups, translations } from './content.js?v=3';
+import { links, projects, skillGroups, translations } from './content.js?v=4';
 import { setupSurfaceInteractions } from './interactions.js';
 
 const icons = {
