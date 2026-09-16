@@ -1,4 +1,4 @@
-import { links, projects, skillGroups, translations } from './content.js?v=5';
+import { links, projects, skillGroups, skillDetails, experiences, translations } from './content.js?v=8';
 import { setupSurfaceInteractions } from './interactions.js';
 
 const icons = {
@@ -19,11 +19,12 @@ const escape = (value) => String(value).replace(/[&<>"']/g, (c) => ({ '&': '&amp
 const multiline = (value) => escape(value).replace(/\n/g, '<br>');
 const tags = (items, className = '') => `<ul class="tags ${className}">${items.map((item) => `<li>${escape(item)}</li>`).join('')}</ul>`;
 const sectionHeading = (number, label, title, intro = '') => `<div class="section-heading"><div class="eyebrow"><span class="section-number">${number}</span>${escape(label)}</div><h2>${multiline(title)}</h2>${intro ? `<p>${escape(intro)}</p>` : ''}</div>`;
-const navKeys = ['home', 'about', 'education', 'project', 'skills', 'contact'];
-const sectionKeys = [...navKeys, 'personal'];
+const navKeys = ['home', 'about', 'education', 'project', 'skills', 'experience', 'contact'];
+const sectionKeys = ['home', 'about', 'education', 'project', 'skills', 'experience', 'contact', 'personal'];
 const storageKey = 'jerry-portfolio-language';
 let language = 'en';
 try { if (localStorage.getItem(storageKey) === 'zh') language = 'zh'; } catch { /* Language switching still works if storage is unavailable. */ }
+const expandedSkills = new Set();
 let activeSection = 'home';
 let sectionObserver;
 let revealObserver;
@@ -80,11 +81,41 @@ function projectCard(project, index, t) {
     </div></article>`;
 }
 
+function skillCard(group, index) {
+  const title = group.title[language];
+  const open = expandedSkills.has(group.id);
+  const triggerId = `skill-trigger-${group.id}`;
+  const panelId = `skill-panel-${group.id}`;
+  return `<article class="skill-card reveal${open ? ' is-expanded' : ''}" style="--stagger:${index * 65}ms">
+    <div class="skill-summary">
+      <h3 class="skill-heading"><button class="skill-toggle" type="button" id="${triggerId}" data-skill-toggle="${group.id}" aria-expanded="${open}" aria-controls="${panelId}">
+        <span class="skill-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
+        <span class="skill-title">${escape(title)}</span>
+        <span class="skill-actions" aria-hidden="true"><span class="skill-icon">${icon(group.icon)}</span><span class="skill-chevron">+</span></span>
+      </button></h3>
+      <div class="skill-body">${group.description ? `<p class="skill-description">${escape(group.description[language])}</p>` : tags(Array.isArray(group.items) ? group.items : group.items[language], 'skill-tags')}</div>
+    </div>
+    <div class="skill-details" id="${panelId}" role="region" aria-labelledby="${triggerId}" ${open ? '' : 'hidden'}>
+      ${skillDetails[group.id][language].map((paragraph) => `<p>${multiline(paragraph)}</p>`).join('')}
+    </div>
+  </article>`;
+}
+
+function experienceItem(experience) {
+  const entry = experience[language];
+  return `<li class="experience-item">
+    <p class="experience-period">${escape(entry.period)}</p>
+    <h3>${escape(entry.role)}</h3>
+    <p class="experience-organisation">${escape(entry.organisation)}</p>
+    <p class="experience-description">${multiline(entry.description)}</p>
+  </li>`;
+}
+
 function renderSections(t) {
   document.querySelector('#portfolio-content').innerHTML = `
     <section class="about-section section container" id="about" aria-labelledby="about-title">
       <div class="about-heading reveal"><div class="eyebrow"><span class="section-number">01</span>${escape(t.about.label)}</div><h2 id="about-title">${multiline(t.about.title)}</h2><span class="about-symbol" aria-hidden="true">{ <span>${escape(t.about.curiosity)}</span> }</span></div>
-      <div class="about-copy reveal"><p class="lead">${escape(t.about.p1)}</p><p>${escape(t.about.p2)}</p><p>${escape(t.about.p3)}</p>${tags(t.about.interests, 'interest-tags')}</div>
+      <div class="about-copy reveal"><p class="lead">${escape(t.about.p1)}</p><p>${escape(t.about.p2)}</p><p>${escape(t.about.p3)}</p>${tags(t.about.interests, 'interest-tags')}<a class="about-personal-link" href="#personal">${escape(t.about.personalLink)}<span aria-hidden="true">↓</span></a></div>
     </section>
     <section class="education-section section container" id="education" aria-label="${escape(t.education.label)}">
       <div class="reveal">${sectionHeading('02', t.education.label, t.education.title)}</div>
@@ -93,12 +124,16 @@ function renderSections(t) {
       </article>
     </section>
     <section class="project-section section container" id="project" aria-label="${escape(t.project.label)}"><div class="reveal">${sectionHeading('03', t.project.label, t.project.title, t.project.intro)}</div><div class="project-list">${projects.map((project, index) => projectCard(project, index, t.project)).join('')}</div></section>
-    <section class="skills-section section container" id="skills" aria-label="${escape(t.skills.label)}"><div class="reveal">${sectionHeading('04', t.skills.label, t.skills.title, t.skills.intro)}</div><div class="skills-grid">${skillGroups.map((group, index) => `<article class="skill-card reveal" style="--stagger:${index * 65}ms"><span class="skill-number">${String(index + 1).padStart(2, '0')}</span><div class="skill-body"><h3>${escape(group.title[language])}</h3>${group.description ? `<p class="skill-description">${escape(group.description[language])}</p>` : tags(Array.isArray(group.items) ? group.items : group.items[language], 'skill-tags')}</div><div class="skill-icon">${icon(group.icon)}</div></article>`).join('')}</div></section>
-    <section class="contact-section section container" id="contact" aria-labelledby="contact-title"><div class="contact-copy reveal"><div class="eyebrow"><span class="section-number">05</span>${escape(t.contact.label)}</div><h2 id="contact-title">${multiline(t.contact.title)}</h2><p>${escape(t.contact.text)}</p></div><div class="contact-links reveal">${['email', 'github', 'linkedin'].map((type) => `<a class="contact-link" ${linkAttributes(links[type], type, destination(links[type], type === 'email') ? t.contact[type] : t.contact[`${type}Aria`])}><span class="contact-icon">${icon(type)}</span><span class="contact-link-text"><span>${escape(t.contact[type])}</span><span class="contact-value${destination(links[type], type === 'email') ? '' : ' placeholder-code'}">${escape(links[type])}</span></span>${icon('arrow', 'contact-arrow')}</a>`).join('')}${Object.values(links).some((value) => /_HERE$/.test(value)) ? `<p class="contact-note">${escape(t.contact.placeholder)}</p>` : ''}</div></section>`;
+    <section class="skills-section section container" id="skills" aria-label="${escape(t.skills.label)}"><div class="reveal">${sectionHeading('04', t.skills.label, t.skills.title, t.skills.intro)}</div><div class="skills-grid">${skillGroups.map(skillCard).join('')}</div></section>
+    <section class="experience-section section container" id="experience" aria-label="${escape(t.experience.title)}">
+      <div class="reveal">${sectionHeading('05', t.experience.label, t.experience.title)}</div>
+      <ol class="experience-timeline reveal" role="list">${experiences.map(experienceItem).join('')}</ol>
+    </section>
+    <section class="contact-section section container" id="contact" aria-labelledby="contact-title"><div class="contact-copy reveal"><div class="eyebrow"><span class="section-number">06</span>${escape(t.contact.label)}</div><h2 id="contact-title">${multiline(t.contact.title)}</h2><p>${escape(t.contact.text)}</p></div><div class="contact-links reveal">${['email', 'github', 'linkedin'].map((type) => `<a class="contact-link" ${linkAttributes(links[type], type, destination(links[type], type === 'email') ? t.contact[type] : t.contact[`${type}Aria`])}><span class="contact-icon">${icon(type)}</span><span class="contact-link-text"><span>${escape(t.contact[type])}</span><span class="contact-value${destination(links[type], type === 'email') ? '' : ' placeholder-code'}">${escape(links[type])}</span></span>${icon('arrow', 'contact-arrow')}</a>`).join('')}${Object.values(links).some((value) => /_HERE$/.test(value)) ? `<p class="contact-note">${escape(t.contact.placeholder)}</p>` : ''}</div></section>`;
   document.querySelector('#portfolio-content').insertAdjacentHTML('beforeend', `
     <section class="personal-section section container" id="personal" aria-labelledby="personal-title">
       <div class="personal-heading reveal">
-        <div class="eyebrow"><span class="section-number">06</span>${escape(t.personal.label)}</div>
+        <div class="eyebrow"><span class="section-number">07</span>${escape(t.personal.label)}</div>
         <h2 id="personal-title">${escape(t.personal.title)}</h2>
       </div>
       <div class="personal-notes reveal">
@@ -177,6 +212,16 @@ function render() {
 }
 
 document.addEventListener('click', (event) => {
+  const skillToggle = event.target.closest('[data-skill-toggle]');
+  if (skillToggle) {
+    const id = skillToggle.dataset.skillToggle;
+    const open = !expandedSkills.has(id);
+    if (open) expandedSkills.add(id); else expandedSkills.delete(id);
+    skillToggle.setAttribute('aria-expanded', String(open));
+    skillToggle.closest('.skill-card').classList.toggle('is-expanded', open);
+    document.getElementById(skillToggle.getAttribute('aria-controls')).hidden = !open;
+    return;
+  }
   const languageButton = event.target.closest('[data-lang]');
   if (languageButton && languageButton.dataset.lang !== language) {
     const section = document.getElementById(activeSection);
