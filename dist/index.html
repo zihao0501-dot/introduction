@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101110" />
+    <title>Jerry Yang · 杨子豪 — Computer Science Portfolio</title>
+    <meta name="description" content="Jerry Yang is a Computer Science student at Monash University specialising in Algorithms and Software, with interests in mathematics and modern web development." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jerry-yang-portfolio.flowy-bell-7020.chatgpt.site" />
+    <link rel="canonical" href="https://jerry-yang-portfolio.flowy-bell-7020.chatgpt.site" />
+    <meta property="og:title" content="Jerry Yang · 杨子豪 — Computer Science Portfolio" />
+    <meta property="og:description" content="Algorithms, software engineering and modern web development. Explore Jerry Yang’s education, skills and independent project." />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23171916'/%3E%3Cpath d='M9 13h9v17q0 7-8 7M24 13l7 11 7-11m-7 11v12' fill='none' stroke='%23d7b36d' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./refinements.css?v=2" />
+    <script type="module" src="./app.js?v=2"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-shell container">
+        <a class="brand" href="#home" aria-label="Jerry Yang, home"><span class="brand-mark">JY<span>.</span></span><span class="brand-name">Jerry Yang</span></a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#home" class="active" data-i18n="nav.home">Home</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#education" data-i18n="nav.education">Education</a>
+          <a href="#project" data-i18n="nav.project">Project</a>
+          <a href="#skills" data-i18n="nav.skills">Skills</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <div class="language-switch" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="zh" aria-pressed="false" lang="zh-CN">中文</button></div>
+          <a class="nav-github icon-button" data-link="github" href="#contact" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7m12 5v-3.4c0-1 .1-1.7-.5-2.4 3.2-.4 6.5-1.6 6.5-7.1 0-1.6-.6-2.9-1.5-4 .2-.4.7-1.9-.1-4 0 0-1.2-.4-4.1 1.5a14 14 0 0 0-7.5 0C4.9 0 3.7.4 3.7.4c-.8 2.1-.3 3.6-.1 4C2.6 5.5 2 6.8 2 8.4c0 5.5 3.3 6.7 6.5 7.1-.5.5-.7 1.1-.6 2.1v3.7" transform="translate(1 1) scale(.9)"/></svg></a>
+          <button class="menu-toggle icon-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation" hidden></nav>
+    </header>
+    <main id="main">
+      <section class="hero container" id="home" aria-labelledby="hero-title">
+        <div class="hero-aura" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><span class="tiny-line"></span><span data-i18n="hero.eyebrow">COMPUTER SCIENCE · MONASH UNIVERSITY</span></div>
+          <h1 id="hero-title">Jerry Yang<span class="chinese-name" lang="zh-CN">杨子豪<span class="name-line" aria-hidden="true"></span></span></h1>
+          <p class="hero-roles" data-i18n="hero.roles">Computer Science Student<br>Algorithms · Software Engineering · Full-Stack Development</p>
+          <p class="hero-intro" data-i18n="hero.intro">I’m a Computer Science student at Monash University focused on algorithms, software engineering, mathematics and web development. I enjoy building practical software products and exploring the ideas behind how software systems work.</p>
+          <div class="hero-buttons"><a class="button button-primary" href="#project"><span data-i18n="hero.project">View Project</span><span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#about"><span data-i18n="hero.about">About Me</span><span aria-hidden="true">↓</span></a></div>
+          <div class="hero-socials"><a data-link="github" href="#contact">GitHub <span aria-hidden="true">↗</span></a><span class="social-divider"></span><a href="#contact"><span data-i18n="nav.contact">Contact</span><span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="network-panel" aria-hidden="true">
+          <div class="network-grid"></div>
+          <svg class="network" viewBox="0 0 540 520" fill="none">
+            <defs><radialGradient id="node-halo"><stop stop-color="#d7b36d" stop-opacity=".35"/><stop offset="1" stop-color="#d7b36d" stop-opacity="0"/></radialGradient><linearGradient id="edge-gradient" x1="80" y1="400" x2="450" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#6e6244"/><stop offset=".55" stop-color="#c3a46b"/><stop offset="1" stop-color="#a4997e"/></linearGradient></defs>
+            <g class="network-orbits" stroke="#b8aa85" stroke-opacity=".12"><ellipse cx="275" cy="260" rx="230" ry="183" transform="rotate(-28 275 260)"/><ellipse cx="275" cy="260" rx="175" ry="230" transform="rotate(-34 275 260)"/><circle cx="275" cy="260" r="230" stroke-dasharray="2 8"/></g>
+            <g class="graph-edges" stroke="url(#edge-gradient)" stroke-opacity=".42"><path d="M93 287 153 132 276 89 418 158 464 300 363 414 202 419 93 287 284 255 153 132 418 158 284 255 276 89M284 255 464 300 202 419 284 255 363 414 418 158M93 287 363 414M153 132 202 419"/></g>
+            <g class="graph-trace" stroke="#e2bd76" stroke-opacity=".9"><path d="M93 287 284 255 418 158"/><path class="trace-secondary" d="M284 255 363 414"/></g>
+            <circle cx="284" cy="255" r="87" fill="url(#node-halo)"/>
+            <g class="graph-nodes" fill="#22241c" stroke="#9a8a64"><circle cx="93" cy="287" r="7"/><circle cx="153" cy="132" r="7"/><circle cx="276" cy="89" r="6"/><circle cx="418" cy="158" r="8"/><circle cx="464" cy="300" r="6"/><circle cx="363" cy="414" r="8"/><circle cx="202" cy="419" r="6"/></g>
+            <circle class="core-ring" cx="284" cy="255" r="29" stroke="#d7b36d" stroke-opacity=".24"/><circle cx="284" cy="255" r="16" fill="#302b1d" stroke="#d7b36d"/><circle cx="284" cy="255" r="5" fill="#f2d79f"/>
+            <g fill="#aba18b" font-size="12" font-family="monospace"><text x="121" y="111">01</text><text x="433" y="143">02</text><text x="378" y="442">03</text><text x="56" y="314">04</text><text x="274" y="66">05</text></g>
+          </svg>
+          <span class="network-label label-algorithms">&lt; <span data-i18n="visual.algorithms">algorithms</span> /&gt;</span><span class="network-label label-software" data-i18n="visual.software">software engineering</span><span class="network-caption"><span></span><span data-i18n="visual.caption">Connecting ideas. Building software.</span></span>
+        </div>
+        <div class="hero-bottom"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="location">Melbourne, Australia</span></span><a href="#about"><span data-i18n="hero.scroll">SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span></a></div>
+      </section>
+      <div id="portfolio-content"></div>
+    </main>
+    <footer id="footer"></footer>
+    <div class="toast" id="link-notice" role="status" hidden></div>
+    <noscript><p class="noscript">Please enable JavaScript to view all sections and switch languages. 请启用 JavaScript 以查看完整内容并切换语言。</p></noscript>
+  </body>
+</html>
