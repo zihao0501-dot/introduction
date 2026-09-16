@@ -30,6 +30,14 @@ export const skillGroups = [
   { icon: 'globe', title: { en: 'Web Development', zh: 'Web 开发' }, items: ['HTML / CSS', 'Node.js', 'Express', 'REST APIs', 'MongoDB'] },
   { icon: 'terminal', title: { en: 'Tools & Platforms', zh: '工具与平台' }, items: ['Git / GitHub', 'Google Cloud', 'Linux', 'Postman'] },
   { icon: 'network', title: { en: 'Computer Science', zh: '计算机科学' }, items: { en: ['Algorithms', 'Data Structures', 'Software Engineering', 'Functional Programming', 'Database Systems'], zh: ['算法', '数据结构', '软件工程', '函数式编程', '数据库系统'] } },
+  {
+    icon: 'compass',
+    title: { en: 'AI Agent Collaboration', zh: 'AI Agent 协作' },
+    description: {
+      en: 'Proficient with AI agents such as Codex: breaking down tasks, setting clear goals, steering implementation and reviewing results.',
+      zh: '熟练使用 Codex 等 AI Agent，善于拆解任务、明确目标、引导实现方向并检查结果。',
+    },
+  },
 ];
 
 export const translations = {
@@ -43,6 +51,13 @@ export const translations = {
     project: { label: 'FEATURED PROJECT', title: 'From an idea to an application.', intro: 'An independent project at the intersection of culture and code.', independent: 'INDEPENDENT PROJECT', view: 'VIEW PROJECT', preview: 'Abstract project preview', demo: 'Live Demo', source: 'GitHub', bilingual: 'Bilingual experience', responsive: 'Responsive web interface', caption: 'TRADITION MEETS TECHNOLOGY', elements: 'FIVE ELEMENTS', wood: 'Wood', fire: 'Fire', earth: 'Earth', metal: 'Metal', water: 'Water' },
     skills: { label: 'SKILLS', title: 'The tools behind the ideas.', intro: 'My core languages, tools and areas of study.' },
     contact: { label: 'CONTACT', title: 'Let’s build\nsomething meaningful.', text: 'Interested in software, algorithms, web development, or potential opportunities? Feel free to get in touch.', email: 'Email', github: 'GitHub', linkedin: 'LinkedIn', placeholder: 'Contact details coming soon.', emailAria: 'Email — contact details coming soon', githubAria: 'GitHub — link coming soon', linkedinAria: 'LinkedIn — link coming soon', demoAria: 'Live Demo — link coming soon' },
+    // Replace these paragraphs with your personal writing; clear status when ready.
+    personal: {
+      label: 'PERSONAL NOTES',
+      title: 'Beyond the code.',
+      paragraphs: ['A space for personal thoughts, everyday moments and things that catch my attention.'],
+      status: 'More to come.',
+    },
     footer: { study: 'Computer Science @ Monash University', top: 'Back to top', copyright: 'Jerry Yang' },
     notice: { email: 'Email contact details will be added soon.', link: 'This link will be added soon.' },
     meta: { title: 'Jerry Yang · 杨子豪 — Computer Science Portfolio', description: 'Jerry Yang is a Computer Science student at Monash University specialising in Algorithms and Software, with interests in mathematics and modern web development.', social: 'Algorithms, software engineering and modern web development. Explore Jerry Yang’s education, skills and independent project.' },
@@ -57,6 +72,13 @@ export const translations = {
     project: { label: '精选项目', title: '让想法成为可交互的应用。', intro: '一个融合传统文化与现代代码的独立项目。', independent: '独立开发项目', view: '查看项目', preview: '项目概念示意图', demo: '在线演示', source: 'GitHub', bilingual: '中英双语体验', responsive: '响应式 Web 界面', caption: '传统文化 × 现代技术', elements: '五行相生', wood: '木', fire: '火', earth: '土', metal: '金', water: '水' },
     skills: { label: '技术栈', title: '将想法落地的工具。', intro: '主要使用的语言、工具与学习领域。' },
     contact: { label: '联系我', title: '一起把想法，\n做成有价值的作品。', text: '如果你对软件、算法、Web 开发感兴趣，或希望交流潜在的合作与工作机会，欢迎联系我。', email: '邮箱', github: 'GitHub', linkedin: 'LinkedIn', placeholder: '联系方式即将补充。', emailAria: '邮箱 — 联系方式待补充', githubAria: 'GitHub — 链接待补充', linkedinAria: 'LinkedIn — 链接待补充', demoAria: '在线演示 — 链接待补充' },
+    // 在 paragraphs 中填写个性化文字，每个字符串是一段；写好后可清空 status。
+    personal: {
+      label: '生活与随想',
+      title: '另一面的我',
+      paragraphs: ['这里会记录一些个人想法、生活片段，以及我感兴趣的事。'],
+      status: '待续。',
+    },
     footer: { study: '计算机科学 @ 莫纳什大学', top: '返回顶部', copyright: '杨子豪' },
     notice: { email: '邮箱地址待补充，敬请期待。', link: '链接待补充，敬请期待。' },
     meta: { title: '杨子豪 · Jerry Yang — 计算机科学个人作品集', description: '杨子豪就读于莫纳什大学计算机科学本科，专修算法与软件，同时学习数学与 Web 开发。了解他的教育背景、技术栈与独立项目。', social: '算法、软件工程与现代 Web 开发。了解杨子豪的教育背景、技术栈与独立项目。' },

@@ -25,6 +25,8 @@ To add a project, append an entry to `projects` with a unique `id`, English and 
 
 English is the default. The chosen language is saved under `jerry-portfolio-language` in localStorage and restored after reload. If browser storage is blocked, language switching still works for the current page. Navigation, accessible labels, metadata and notices also translate.
 
+The final **Beyond the code / 另一面的我** section sits between Contact and the footer. Edit `translations.en.personal` and `translations.zh.personal` in `dist/content.js` to add your writing. Each string in `paragraphs` becomes one paragraph, and newlines within a string are preserved. Set `status` to an empty string to remove the “More to come / 待续” note. It starts with neutral placeholder text, with no invented personal interests or experiences.
+
 Mouse effects run only with a fine pointer and hover support. Touch layouts and `prefers-reduced-motion` suppress motion. Hero animation pauses offscreen and in hidden tabs. Scroll reveals happen once for each observed element.
 
 ## Hosting

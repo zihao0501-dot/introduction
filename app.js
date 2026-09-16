@@ -1,4 +1,4 @@
-import { links, projects, skillGroups, translations } from './content.js?v=4';
+import { links, projects, skillGroups, translations } from './content.js?v=5';
 import { setupSurfaceInteractions } from './interactions.js';
 
 const icons = {
@@ -10,6 +10,7 @@ const icons = {
   globe: '<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>',
   terminal: '<rect x="2" y="4" width="20" height="16" rx="3"/><path d="m6 9 3 3-3 3m7 0h5"/>',
   network: '<circle cx="12" cy="5" r="3"/><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="m10.5 7.5-4 8m7-8 4 8M8 18h8"/>',
+  compass: '<circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6Z"/>',
   book: '<path d="M12 6c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V5c-4-1-7-1-10 1v15"/>',
   pin: '<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
 };
@@ -19,6 +20,7 @@ const multiline = (value) => escape(value).replace(/\n/g, '<br>');
 const tags = (items, className = '') => `<ul class="tags ${className}">${items.map((item) => `<li>${escape(item)}</li>`).join('')}</ul>`;
 const sectionHeading = (number, label, title, intro = '') => `<div class="section-heading"><div class="eyebrow"><span class="section-number">${number}</span>${escape(label)}</div><h2>${multiline(title)}</h2>${intro ? `<p>${escape(intro)}</p>` : ''}</div>`;
 const navKeys = ['home', 'about', 'education', 'project', 'skills', 'contact'];
+const sectionKeys = [...navKeys, 'personal'];
 const storageKey = 'jerry-portfolio-language';
 let language = 'en';
 try { if (localStorage.getItem(storageKey) === 'zh') language = 'zh'; } catch { /* Language switching still works if storage is unavailable. */ }
@@ -91,8 +93,20 @@ function renderSections(t) {
       </article>
     </section>
     <section class="project-section section container" id="project" aria-label="${escape(t.project.label)}"><div class="reveal">${sectionHeading('03', t.project.label, t.project.title, t.project.intro)}</div><div class="project-list">${projects.map((project, index) => projectCard(project, index, t.project)).join('')}</div></section>
-    <section class="skills-section section container" id="skills" aria-label="${escape(t.skills.label)}"><div class="reveal">${sectionHeading('04', t.skills.label, t.skills.title, t.skills.intro)}</div><div class="skills-grid">${skillGroups.map((group, index) => `<article class="skill-card reveal" style="--stagger:${index * 65}ms"><span class="skill-number">${String(index + 1).padStart(2, '0')}</span><div class="skill-body"><h3>${escape(group.title[language])}</h3>${tags(Array.isArray(group.items) ? group.items : group.items[language], 'skill-tags')}</div><div class="skill-icon">${icon(group.icon)}</div></article>`).join('')}</div></section>
+    <section class="skills-section section container" id="skills" aria-label="${escape(t.skills.label)}"><div class="reveal">${sectionHeading('04', t.skills.label, t.skills.title, t.skills.intro)}</div><div class="skills-grid">${skillGroups.map((group, index) => `<article class="skill-card reveal" style="--stagger:${index * 65}ms"><span class="skill-number">${String(index + 1).padStart(2, '0')}</span><div class="skill-body"><h3>${escape(group.title[language])}</h3>${group.description ? `<p class="skill-description">${escape(group.description[language])}</p>` : tags(Array.isArray(group.items) ? group.items : group.items[language], 'skill-tags')}</div><div class="skill-icon">${icon(group.icon)}</div></article>`).join('')}</div></section>
     <section class="contact-section section container" id="contact" aria-labelledby="contact-title"><div class="contact-copy reveal"><div class="eyebrow"><span class="section-number">05</span>${escape(t.contact.label)}</div><h2 id="contact-title">${multiline(t.contact.title)}</h2><p>${escape(t.contact.text)}</p></div><div class="contact-links reveal">${['email', 'github', 'linkedin'].map((type) => `<a class="contact-link" ${linkAttributes(links[type], type, destination(links[type], type === 'email') ? t.contact[type] : t.contact[`${type}Aria`])}><span class="contact-icon">${icon(type)}</span><span class="contact-link-text"><span>${escape(t.contact[type])}</span><span class="contact-value${destination(links[type], type === 'email') ? '' : ' placeholder-code'}">${escape(links[type])}</span></span>${icon('arrow', 'contact-arrow')}</a>`).join('')}${Object.values(links).some((value) => /_HERE$/.test(value)) ? `<p class="contact-note">${escape(t.contact.placeholder)}</p>` : ''}</div></section>`;
+  document.querySelector('#portfolio-content').insertAdjacentHTML('beforeend', `
+    <section class="personal-section section container" id="personal" aria-labelledby="personal-title">
+      <div class="personal-heading reveal">
+        <div class="eyebrow"><span class="section-number">06</span>${escape(t.personal.label)}</div>
+        <h2 id="personal-title">${escape(t.personal.title)}</h2>
+      </div>
+      <div class="personal-notes reveal">
+        <span class="personal-mark" aria-hidden="true">✳</span>
+        <div class="personal-prose">${t.personal.paragraphs.map((paragraph) => `<p>${multiline(paragraph)}</p>`).join('')}</div>
+        ${t.personal.status ? `<p class="personal-status">${escape(t.personal.status)}</p>` : ''}
+      </div>
+    </section>`);
   document.querySelector('#footer').innerHTML = `<div class="footer-inner container"><div><a class="footer-name" href="#home">Jerry Yang <span>·</span> <span lang="zh-CN">杨子豪</span></a><p>${escape(t.footer.study)}</p></div><span class="copyright">© ${new Date().getFullYear()} ${escape(t.footer.copyright)}</span><div class="footer-socials">${['github', 'linkedin', 'email'].map((type) => `<a class="icon-button" ${linkAttributes(links[type], type, destination(links[type], type === 'email') ? t.contact[type] : t.contact[`${type}Aria`])}>${icon(type)}</a>`).join('')}<span></span><a class="icon-button back-top" href="#home" aria-label="${escape(t.footer.top)}">↑</a></div></div>`;
 }
 
@@ -119,7 +133,7 @@ function observeSections() {
   sectionObserver = new IntersectionObserver((entries) => {
     for (const entry of entries) if (entry.isIntersecting) updateActiveSection(entry.target.id);
   }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
-  navKeys.forEach((id) => sectionObserver.observe(document.getElementById(id)));
+  sectionKeys.forEach((id) => sectionObserver.observe(document.getElementById(id)));
   if (!motionPreference.matches) {
     revealObserver = new IntersectionObserver((entries) => {
       for (const entry of entries) if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObserver.unobserve(entry.target); }
@@ -188,7 +202,7 @@ document.addEventListener('click', (event) => {
   const sectionLink = event.target.closest('a[href^="#"]:not([data-placeholder])');
   if (sectionLink) {
     const id = sectionLink.getAttribute('href').slice(1);
-    if (navKeys.includes(id)) updateActiveSection(id);
+    if (sectionKeys.includes(id)) updateActiveSection(id);
     if (sectionLink.closest('.mobile-nav')) {
       setMenu(false);
       const target = document.getElementById(id);

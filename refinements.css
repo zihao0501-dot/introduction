@@ -118,6 +118,7 @@
   .skill-card:hover::before { transform:scaleY(1); }
   .skill-number { font:12px/1.8 var(--mono);color:#898575;padding-top:1px; }
   .skill-body { min-width:0;transition:transform .4s var(--ease); }
+  .skill-description { font-size:14px;line-height:1.95;margin-top:12px;color:var(--muted); }
   .skill-card:hover .skill-body { transform:translateX(3px); }
   .skill-card h3 { font:500 13px/1.6 var(--mono);letter-spacing:1.1px;text-transform:uppercase;color:#d6d5cb; }
   .skill-tags { margin-top:12px;display:flex;gap:0 6px; }
@@ -143,6 +144,16 @@
   .contact-link:hover { border-color:#d7b36d70; }
   .contact-link:hover .contact-arrow { color:var(--accent);transform:translate(3px,-3px); }
   .contact-note { font-size:12px;color:var(--subtle);margin-top:14px; }
+  .personal-section { position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:88px;padding-top:82px;padding-bottom:110px;isolation:isolate; }
+  .personal-section::before { content:"";position:absolute;inset:0 60px auto;height:1px;background:var(--border); }
+  .personal-section::after { content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 78% 65%,#b68b370b,transparent 60%); }
+  .personal-heading h2 { margin-top:21px;font-size:clamp(36px,4vw,52px); }
+  .personal-notes { position:relative;border-left:1px solid #d7b36d30;padding:3px 0 3px 32px;min-width:0; }
+  .personal-mark { display:block;color:var(--accent);font-size:25px;line-height:1;margin-bottom:24px; }
+  .personal-prose { max-width:540px; }
+  .personal-prose p { font-size:18px;line-height:1.95;color:#b6bbb8;overflow-wrap:anywhere; }
+  .personal-prose p+p { margin-top:22px; }
+  .personal-status { font:12px/1.6 var(--mono);letter-spacing:.7px;color:var(--subtle);margin-top:27px; }
   #footer { background:#0e100e;border-top:1px solid var(--border); }
   .footer-inner { display:flex;align-items:center;justify-content:space-between;gap:25px;padding-block:36px; }
   .footer-name { font-size:15px;font-weight:550; }
@@ -172,6 +183,9 @@
   @keyframes language-reveal { from { opacity:.55; } to { opacity:1; } }
 }
 @layer mobile-refinements {
+  @media (max-width:1100px) { .personal-section { gap:45px; }.personal-section::before { inset-inline:38px; } }
+  @media (max-width:850px) { .personal-section { gap:35px;padding-block:70px; }.personal-section::before { inset-inline:28px; }.personal-prose p { font-size:17px; } }
+  @media (max-width:680px) { .personal-section { display:block;padding-block:62px; }.personal-section::before { inset-inline:24px; }.personal-heading h2 { font-size:38px; }.personal-notes { margin-top:32px;padding-left:23px; }.personal-prose p { font-size:16px; }.personal-mark { font-size:23px;margin-bottom:20px; } }
   @media (max-width:1100px) {
     .nav-shell { padding-inline:23px; }.desktop-nav { gap:18px; }.hero { padding-top:80px; }.eyebrow { font-size:11px;letter-spacing:.8px; }.about-section { gap:48px; }.project-card { gap:36px; }.skills-section,.contact-section { gap:45px; }.contact-section::before { inset-inline:38px; }
   }
