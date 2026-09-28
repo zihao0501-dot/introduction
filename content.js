@@ -1,8 +1,8 @@
 /** Replace these four values when your real destinations are ready. */
 export const links = {
-  github: 'GITHUB_URL_HERE',
-  email: 'EMAIL_HERE',
-  linkedin: 'LINKEDIN_URL_HERE',
+  github: 'https://github.com/zihao0501-dot',
+  email: 'zihao051101@outlook.com',
+  linkedin: 'https://www.linkedin.com/in/zihao-yang-7b7331359',
   project: 'PROJECT_URL_HERE',
 };
 
@@ -44,24 +44,24 @@ export const skillGroups = [
 /** Edit each category's English and Chinese expanded paragraphs here. */
 export const skillDetails = {
   languages: {
-    en: ['REPLACE WORD — Add more about your programming languages here.', 'REPLACE WORD — Add an example of how you have used them.'],
-    zh: ['REPLACE WORD — 在这里补充你对编程语言的掌握与使用方式。', 'REPLACE WORD — 在这里填写一个你实际使用这些语言的例子。'],
+    en: ['', ''],
+    zh: ['', ''],
   },
   web: {
-    en: ['REPLACE WORD — Add more about your web development skills here.', 'REPLACE WORD — Add a project or implementation example.'],
-    zh: ['REPLACE WORD — 在这里补充你的 Web 开发能力。', 'REPLACE WORD — 在这里填写一个项目或功能实现的例子。'],
+    en: ['', ''],
+    zh: ['', ''],
   },
   tools: {
-    en: ['REPLACE WORD — Describe how you use your tools and platforms.', 'REPLACE WORD — Add a workflow or practical example.'],
-    zh: ['REPLACE WORD — 在这里补充你使用工具与平台的方式。', 'REPLACE WORD — 在这里填写一个工作流程或实践例子。'],
+    en: ['', ''],
+    zh: ['', ''],
   },
   'computer-science': {
-    en: ['REPLACE WORD — Add more about your computer science knowledge here.', 'REPLACE WORD — Add a problem you have explored or solved.'],
-    zh: ['REPLACE WORD — 在这里补充你的计算机科学知识与学习方向。', 'REPLACE WORD — 在这里填写一个你研究或解决过的问题。'],
+    en: ['', ''],
+    zh: ['', ''],
   },
   'ai-agents': {
-    en: ['REPLACE WORD — Describe how you collaborate with Codex or other AI agents.', 'REPLACE WORD — Add an example of task guidance and result review.'],
-    zh: ['REPLACE WORD — 在这里补充你与 Codex 等 AI Agent 协作的方式。', 'REPLACE WORD — 在这里填写任务引导与结果检查的例子。'],
+    en: ['', ''],
+    zh: ['', ''],
   },
 };
 
@@ -115,7 +115,7 @@ export const translations = {
     personal: {
       label: 'PERSONAL NOTES',
       title: 'Beyond the code.',
-      paragraphs: ['A space for personal thoughts, everyday moments and things that catch my attention.'],
+      paragraphs: ['I’m Juanjuan from Beijing. My personality oscillates between ENTP and ENTJ—I’m a "J" on weekdays and a "P" on weekends. My hobbies include badminton, basketball, gaming (especially *Valorant*), listening to music and going to concerts, caring for pets (two cats and two dogs in Melbourne; two cats in Beijing), cooking, fortune-telling, binge-watching shows... the list goes on. Anyway, this is just the tip of the iceberg; send me a job offer to unlock the rest of the exciting details!'],
       status: 'More to come.',
     },
     footer: { study: 'Computer Science @ Monash University', top: 'Back to top', copyright: 'Jerry Yang' },
@@ -127,7 +127,7 @@ export const translations = {
     nav: { home: '首页', about: '关于我', education: '教育背景', project: '项目', skills: '技术栈', experience: '就业', contact: '联系我', main: '主导航', mobile: '移动端导航', open: '展开菜单', close: '收起菜单', language: '选择语言', brand: '杨子豪，返回首页' },
     hero: { eyebrow: '计算机科学 · 莫纳什大学', roles: '计算机科学本科生\n算法 · 软件工程 · 全栈开发', intro: '我是莫纳什大学的计算机科学学生，专注于算法、软件工程、数学与 Web 开发。我喜欢把想法做成实用的软件产品，也乐于探索软件系统背后的原理。', project: '查看项目', about: '关于我', scroll: '向下探索' },
     visual: { algorithms: '算法', software: '软件工程', mathematics: '数学', fullstack: '全栈开发', caption: '连接想法，构建软件。' },
-    about: { personalLink: '另一面的我', label: '关于我', curiosity: '好奇心', title: '探索理论，\n也把想法变成现实。', p1: '你好，我是杨子豪，就读于莫纳什大学计算机科学本科，专修算法与软件，同时学习数学和 Web 开发。', p2: '我对理论计算机科学与实际开发之间的联系充满兴趣：既想理解算法为什么有效，也希望把这些理解转化为有用的软件。目前，我尤其关注算法、软件工程与现代 Web 应用开发。', p3: '在推进个人项目的同时，我保持着 70+ WAM 的 Distinction 学业平均水平。', interests: ['算法', '软件工程', '全栈开发', '数学'] },
+    about: { personalLink: '想看些好玩的?', label: '关于我', curiosity: '好奇心', title: '探索理论，\n也把想法变成现实。', p1: '你好，我是杨子豪，就读于莫纳什大学计算机科学本科，专修算法与软件，同时学习数学和 Web 开发。', p2: '我对理论计算机科学与实际开发之间的联系充满兴趣：既想理解算法为什么有效，也希望把这些理解转化为有用的软件。目前，我尤其关注算法、软件工程与现代 Web 应用开发。', p3: '在推进个人项目的同时，我保持着 70+ WAM 的 Distinction 学业平均水平。', interests: ['算法', '软件工程', '全栈开发', '数学'] },
     education: { label: '教育背景', title: '扎实积累，持续探索。', university: '莫纳什大学', degree: '计算机科学学士', specialisation: '专业方向', specialisationValue: '算法与软件', study: '辅修（Minor）', studyValue: '数学 · Web 开发', result: '学业成绩', average: 'Distinction 平均水平', wam: '加权平均分', badge: '本科在读' },
     project: { label: '精选项目', title: '让想法成为可交互的应用。', intro: '一个融合传统文化与现代代码的独立项目。', independent: '独立开发项目', view: '查看项目', preview: '项目概念示意图', demo: '在线演示', source: 'GitHub', bilingual: '中英双语体验', responsive: '响应式 Web 界面', caption: '传统文化 × 现代技术', elements: '五行相生', wood: '木', fire: '火', earth: '土', metal: '金', water: '水' },
     skills: { label: '技术栈', title: '将想法落地的工具。', intro: '主要使用的语言、工具与学习领域。' },
@@ -137,7 +137,7 @@ export const translations = {
     personal: {
       label: '生活与随想',
       title: '另一面的我',
-      paragraphs: ['这里会记录一些个人想法、生活片段，以及我感兴趣的事。'],
+      paragraphs: ['我叫卷卷，来自北京，ENTP/ENTJ反复横跳人格，工作日J人周末P人-_-。我的爱好：羽毛球，篮球，各类游戏尤其瓦，听歌看演唱会，养猫（在墨尔本两猫两狗，在北京两猫），做饭，算命，看剧...数不清了。总之，这只是冰山一角，后续精彩内容给我下offer解锁'],
       status: '待续。',
     },
     footer: { study: '计算机科学 @ 莫纳什大学', top: '返回顶部', copyright: '杨子豪' },
