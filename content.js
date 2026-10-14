@@ -1,42 +1,130 @@
 /** Replace these four values when your real destinations are ready. */
 export const links = {
-  github: 'https://github.com/zihao0501-dot',
-  email: 'zihao051101@outlook.com',
-  linkedin: 'https://www.linkedin.com/in/zihao-yang-7b7331359',
-  project: 'PROJECT_URL_HERE',
+  github: "https://github.com/zihao0501-dot",
+  email: "zihao051101@outlook.com",
+  linkedin: "https://www.linkedin.com/in/zihao-yang-7b7331359",
 };
 
 /** Add another object here to extend the project gallery. Keep both languages. */
-export const projects = [{
-  id: 'fortune',
-  // Set a local image path here to replace the abstract preview.
-  previewImage: null,
-  demo: links.project,
-  github: links.github,
-  en: {
-    title: 'Chinese Fortune & Bazi Web Application',
-    description: 'A modern web application that transforms concepts from traditional Chinese Bazi and Five Elements theory into an interactive digital experience.',
-    topics: ['Bazi / Chinese metaphysics', 'Five Elements', 'Daily fortune', 'Academic fortune', 'Wealth interpretations', 'Relationship interpretations'],
+
+export const projects = [
+  {
+    id: "fortune",
+    // Set a local image path here if you want to replace the abstract preview.
+    previewImage: null,
+    // 视频路径或 MP4/WebM 直链，例如 "./assets/coursey-demo.mp4"；null 保留图片展示。
+    previewVideo: "./assets/shuxiang-demo.mp4",
+    // Project-specific links
+    demo: "FORTUNE_PROJECT_URL_HERE",
+    github: "FORTUNE_GITHUB_URL_HERE",
+    en: {
+      title: "Chinese Fortune & Bazi Web Application",
+      description:
+        "A modern web application that transforms concepts from traditional Chinese Bazi and Five Elements theory into an interactive digital experience.",
+      topics: [
+        "Bazi / Chinese metaphysics",
+        "Five Elements",
+        "Daily fortune",
+        "Academic fortune",
+        "Wealth interpretations",
+        "Relationship interpretations",
+      ],
+    },
+    zh: {
+      title: "中华运势与八字 Web 应用",
+      description:
+        "将传统八字与五行文化转化为交互式数字体验，探索传统理念与现代 Web 开发的结合。",
+      topics: [
+        "八字与传统命理",
+        "五行",
+        "每日运势",
+        "学业运势",
+        "财运解读",
+        "感情解读",
+      ],
+    },
   },
-  zh: {
-    title: '中华运势与八字 Web 应用',
-    description: '将传统八字与五行文化转化为交互式数字体验，探索传统理念与现代 Web 开发的结合。',
-    topics: ['八字与传统命理', '五行', '每日运势', '学业运势', '财运解读', '感情解读'],
+
+  {
+    id: "coursey",
+    // Add a screenshot later, e.g. '/images/coursey.png'
+    previewImage: null,
+    // 视频路径或 MP4/WebM 直链，例如 "./assets/coursey-demo.mp4"；null 保留图片展示。
+    previewVideo: "./assets/coursey-demo.mp4",
+    // Project-specific links
+    demo: "COURSEY_PROJECT_URL_HERE",
+    github: "COURSEY_GITHUB_URL_HERE",
+    en: {
+      title: "Coursey — University Course Review Platform",
+      description:
+        "A university course review and discovery platform designed to help students explore courses, share experiences and make more informed course selections.",
+      topics: [
+        "Full-Stack Development",
+        "Course Reviews",
+        "University Courses",
+        "User Accounts",
+        "Admin System",
+        "School-Based Recommendations",
+      ],
+    },
+
+    zh: {
+      title: "Coursey — 大学课程评价平台",
+      description:
+        "面向大学生的课程评价与选课信息平台，帮助学生浏览不同学校的课程、分享真实体验，并获得更有价值的选课参考。",
+      topics: [
+        "全栈开发",
+        "课程评价",
+        "大学课程",
+        "用户系统",
+        "管理员系统",
+        "学校课程推荐",
+      ],
+    },
   },
-}];
+];
 
 export const skillGroups = [
-  { id: 'languages', icon: 'code', title: { en: 'Languages', zh: '编程语言' }, items: ['JavaScript', 'TypeScript', 'Python', 'Java', 'Haskell', 'Bash'] },
-  { id: 'web', icon: 'globe', title: { en: 'Web Development', zh: 'Web 开发' }, items: ['HTML / CSS', 'Node.js', 'Express', 'REST APIs', 'MongoDB'] },
-  { id: 'tools', icon: 'terminal', title: { en: 'Tools & Platforms', zh: '工具与平台' }, items: ['Git / GitHub', 'Google Cloud', 'Linux', 'Postman'] },
-  { id: 'computer-science', icon: 'network', title: { en: 'Computer Science', zh: '计算机科学' }, items: { en: ['Algorithms', 'Data Structures', 'Software Engineering', 'Functional Programming', 'Database Systems'], zh: ['算法', '数据结构', '软件工程', '函数式编程', '数据库系统'] } },
   {
-    id: 'ai-agents',
-    icon: 'compass',
-    title: { en: 'AI Agent Collaboration', zh: 'AI Agent 协作' },
+    id: "languages",
+    icon: "code",
+    title: { en: "Languages", zh: "编程语言" },
+    items: ["JavaScript", "TypeScript", "Python", "Java", "Haskell", "Bash"],
+  },
+  {
+    id: "web",
+    icon: "globe",
+    title: { en: "Web Development", zh: "Web 开发" },
+    items: ["HTML / CSS", "Node.js", "Express", "REST APIs", "MongoDB"],
+  },
+  {
+    id: "tools",
+    icon: "terminal",
+    title: { en: "Tools & Platforms", zh: "工具与平台" },
+    items: ["Git / GitHub", "Google Cloud", "Linux", "Postman"],
+  },
+  {
+    id: "computer-science",
+    icon: "network",
+    title: { en: "Computer Science", zh: "计算机科学" },
+    items: {
+      en: [
+        "Algorithms",
+        "Data Structures",
+        "Software Engineering",
+        "Functional Programming",
+        "Database Systems",
+      ],
+      zh: ["算法", "数据结构", "软件工程", "函数式编程", "数据库系统"],
+    },
+  },
+  {
+    id: "ai-agents",
+    icon: "compass",
+    title: { en: "AI Agent Collaboration", zh: "AI Agent 协作" },
     description: {
-      en: 'Proficient with AI agents such as Codex: breaking down tasks, setting clear goals, steering implementation and reviewing results.',
-      zh: '熟练使用 Codex 等 AI Agent，善于拆解任务、明确目标、引导实现方向并检查结果。',
+      en: "Proficient with AI agents such as Codex: breaking down tasks, setting clear goals, steering implementation and reviewing results.",
+      zh: "熟练使用 Codex 等 AI Agent，善于拆解任务、明确目标、引导实现方向并检查结果。",
     },
   },
 ];
@@ -44,104 +132,317 @@ export const skillGroups = [
 /** Edit each category's English and Chinese expanded paragraphs here. */
 export const skillDetails = {
   languages: {
-    en: ['', ''],
-    zh: ['', ''],
+    en: ["", ""],
+    zh: ["", ""],
   },
   web: {
-    en: ['', ''],
-    zh: ['', ''],
+    en: ["", ""],
+    zh: ["", ""],
   },
   tools: {
-    en: ['', ''],
-    zh: ['', ''],
+    en: ["", ""],
+    zh: ["", ""],
   },
-  'computer-science': {
-    en: ['', ''],
-    zh: ['', ''],
+  "computer-science": {
+    en: ["", ""],
+    zh: ["", ""],
   },
-  'ai-agents': {
-    en: ['', ''],
-    zh: ['', ''],
+  "ai-agents": {
+    en: ["", ""],
+    zh: ["", ""],
   },
 };
 
 /** Replace these entries with your own work history, newest first. Keep both languages. */
 export const experiences = [
   {
-    id: 'experience-1',
+    id: "experience-1",
     en: {
-      period: '2024-2026',
-      role: 'Teaching Assist',
-      organisation: 'ZhiWei Education',
-      description: 'Teaching IAL Course, Including Mathematics, economics and Further Mathematics',
+      period: "2024-2026",
+      role: "Teaching Assist",
+      organisation: "ZhiWei Education",
+      description:
+        "Teaching IAL Course, Including Mathematics, economics and Further Mathematics",
     },
     zh: {
-      period: '2024-2026',
-      role: '助教',
-      organisation: '智维国际教育',
-      description: '教学IAL国际课程',
+      period: "2024-2026",
+      role: "助教",
+      organisation: "智维国际教育",
+      description: "教学IAL国际课程",
     },
   },
   {
-    id: 'experience-2',
+    id: "experience-2",
     en: {
-      period: '2026-Until',
-      role: 'Developer',
-      organisation: 'Pixdyne',
-      description: 'full stack developer',
+      period: "2026-Until",
+      role: "Developer",
+      organisation: "Pixdyne",
+      description: "full stack developer",
     },
     zh: {
-      period: '2026-至今',
-      role: '全栈工程师',
-      organisation: 'Pixdyne',
-      description: '全栈开发，为澳大利亚很多企业做全栈网站平台',
+      period: "2026-至今",
+      role: "全栈工程师",
+      organisation: "Pixdyne",
+      description: "全栈开发，为澳大利亚很多企业做全栈网站平台",
     },
   },
 ];
 
 export const translations = {
   en: {
-    skip: 'Skip to content', location: 'Melbourne, Australia',
-    nav: { home: 'Home', about: 'About', education: 'Education', project: 'Project', skills: 'Skills', experience: 'Experience', contact: 'Contact', main: 'Main navigation', mobile: 'Mobile navigation', open: 'Open menu', close: 'Close menu', language: 'Language', brand: 'Jerry Yang, home' },
-    hero: { eyebrow: 'COMPUTER SCIENCE · MONASH UNIVERSITY', roles: 'Computer Science Student\nAlgorithms · Software Engineering · Full-Stack Development', intro: 'I’m a Computer Science student at Monash University focused on algorithms, software engineering, mathematics and web development. I enjoy building practical software products and exploring the ideas behind how software systems work.', project: 'View Project', about: 'About Me', scroll: 'SCROLL TO EXPLORE' },
-    visual: { algorithms: 'algorithms', software: 'software engineering', mathematics: 'mathematics', fullstack: 'full-stack development', caption: 'Connecting ideas. Building software.' },
-    about: { personalLink: 'Beyond the code', label: 'ABOUT ME', curiosity: 'curiosity', title: 'Curious about the theory.\nDriven to build.', p1: 'I’m Jerry, a Computer Science student at Monash University specialising in Algorithms and Software, with additional study in Mathematics and Web Development.', p2: 'I’m interested in the connection between theoretical computer science and practical development: understanding why an algorithm works, then turning that understanding into useful software. My focus is on algorithms, software engineering and building modern web applications.', p3: 'Alongside my independent projects, I’m maintaining a Distinction average of 70+ WAM.', interests: ['Algorithms', 'Software engineering', 'Full-stack development', 'Mathematics'] },
-    education: { label: 'EDUCATION', title: 'A foundation in computer science.', university: 'Monash University', degree: 'Bachelor of Computer Science', specialisation: 'SPECIALISATION', specialisationValue: 'Algorithms and Software', study: 'MINOR', studyValue: 'Mathematics · Web Development', result: 'ACADEMIC RESULT', average: 'Distinction Average', wam: 'WAM', badge: 'Undergraduate' },
-    project: { label: 'FEATURED PROJECT', title: 'From an idea to an application.', intro: 'An independent project at the intersection of culture and code.', independent: 'INDEPENDENT PROJECT', view: 'VIEW PROJECT', preview: 'Abstract project preview', demo: 'Live Demo', source: 'GitHub', bilingual: 'Bilingual experience', responsive: 'Responsive web interface', caption: 'TRADITION MEETS TECHNOLOGY', elements: 'FIVE ELEMENTS', wood: 'Wood', fire: 'Fire', earth: 'Earth', metal: 'Metal', water: 'Water' },
-    skills: { label: 'SKILLS', title: 'The tools behind the ideas.', intro: 'My core languages, tools and areas of study.' },
-    experience: { label: 'CAREER', title: 'Work experience.' },
-    contact: { label: 'CONTACT', title: 'Let’s build\nsomething meaningful.', text: 'Interested in software, algorithms, web development, or potential opportunities? Feel free to get in touch.', email: 'Email', github: 'GitHub', linkedin: 'LinkedIn', placeholder: 'Contact details coming soon.', emailAria: 'Email — contact details coming soon', githubAria: 'GitHub — link coming soon', linkedinAria: 'LinkedIn — link coming soon', demoAria: 'Live Demo — link coming soon' },
+    skip: "Skip to content",
+    location: "Melbourne, Australia",
+    nav: {
+      home: "Home",
+      about: "About",
+      education: "Education",
+      project: "Project",
+      skills: "Skills",
+      experience: "Experience",
+      contact: "Contact",
+      main: "Main navigation",
+      mobile: "Mobile navigation",
+      open: "Open menu",
+      close: "Close menu",
+      language: "Language",
+      brand: "Jerry Yang, home",
+    },
+    hero: {
+      eyebrow: "COMPUTER SCIENCE · MONASH UNIVERSITY",
+      roles:
+        "Computer Science Student\nAlgorithms · Software Engineering · Full-Stack Development",
+      intro:
+        "I’m a Computer Science student at Monash University focused on algorithms, software engineering, mathematics and web development. I enjoy building practical software products and exploring the ideas behind how software systems work.",
+      project: "View Project",
+      about: "About Me",
+      scroll: "SCROLL TO EXPLORE",
+    },
+    visual: {
+      algorithms: "algorithms",
+      software: "software engineering",
+      mathematics: "mathematics",
+      fullstack: "full-stack development",
+      caption: "Connecting ideas. Building software.",
+    },
+    about: {
+      personalLink: "Beyond the code",
+      label: "ABOUT ME",
+      curiosity: "curiosity",
+      title: "Curious about the theory.\nDriven to build.",
+      p1: "I’m Jerry, a Computer Science student at Monash University specialising in Algorithms and Software, with additional study in Mathematics and Web Development.",
+      p2: "I’m interested in the connection between theoretical computer science and practical development: understanding why an algorithm works, then turning that understanding into useful software. My focus is on algorithms, software engineering and building modern web applications.",
+      p3: "Alongside my independent projects, I’m maintaining a Distinction average of 70+ WAM.",
+      interests: [
+        "Algorithms",
+        "Software engineering",
+        "Full-stack development",
+        "Mathematics",
+      ],
+    },
+    education: {
+      label: "EDUCATION",
+      title: "A foundation in computer science.",
+      university: "Monash University",
+      degree: "Bachelor of Computer Science",
+      specialisation: "SPECIALISATION",
+      specialisationValue: "Algorithms and Software",
+      study: "MINOR",
+      studyValue: "Mathematics · Web Development",
+      result: "ACADEMIC RESULT",
+      average: "Distinction Average",
+      wam: "WAM",
+      badge: "Undergraduate",
+    },
+    project: {
+      label: "FEATURED PROJECT",
+      title: "From an idea to an application.",
+      intro: "An independent project at the intersection of culture and code.",
+      independent: "INDEPENDENT PROJECT",
+      view: "VIEW PROJECT",
+      preview: "Abstract project preview",
+      demo: "Live Demo",
+      videoDemo: "Project video demo",
+      openVideo: "Open video",
+      videoUnavailable: "This video could not be loaded.",
+      source: "GitHub",
+      bilingual: "Bilingual experience",
+      responsive: "Responsive web interface",
+      caption: "TRADITION MEETS TECHNOLOGY",
+      elements: "FIVE ELEMENTS",
+      wood: "Wood",
+      fire: "Fire",
+      earth: "Earth",
+      metal: "Metal",
+      water: "Water",
+    },
+    skills: {
+      label: "SKILLS",
+      title: "The tools behind the ideas.",
+      intro: "My core languages, tools and areas of study.",
+    },
+    experience: { label: "CAREER", title: "Work experience." },
+    contact: {
+      label: "CONTACT",
+      title: "Let’s build\nsomething meaningful.",
+      text: "Interested in software, algorithms, web development, or potential opportunities? Feel free to get in touch.",
+      email: "Email",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+      placeholder: "Contact details coming soon.",
+      emailAria: "Email — contact details coming soon",
+      githubAria: "GitHub — link coming soon",
+      linkedinAria: "LinkedIn — link coming soon",
+      demoAria: "Live Demo — link coming soon",
+    },
     // Replace these paragraphs with your personal writing; clear status when ready.
     personal: {
-      label: 'PERSONAL NOTES',
-      title: 'Beyond the code.',
-      paragraphs: ['I’m Juanjuan from Beijing. My personality oscillates between ENTP and ENTJ—I’m a "J" on weekdays and a "P" on weekends. My hobbies include badminton, basketball, gaming (especially *Valorant*), listening to music and going to concerts, caring for pets (two cats and two dogs in Melbourne; two cats in Beijing), cooking, fortune-telling, binge-watching shows... the list goes on. Anyway, this is just the tip of the iceberg; send me a job offer to unlock the rest of the exciting details!'],
-      status: 'More to come.',
+      label: "PERSONAL NOTES",
+      title: "Beyond the code.",
+      paragraphs: [
+        'I’m Juanjuan from Beijing. My personality oscillates between ENTP and ENTJ—I’m a "J" on weekdays and a "P" on weekends. My hobbies include badminton, basketball, gaming (especially *Valorant*), listening to music and going to concerts, caring for pets (two cats and two dogs in Melbourne; two cats in Beijing), cooking, fortune-telling, binge-watching shows... the list goes on. Anyway, this is just the tip of the iceberg; send me a job offer to unlock the rest of the exciting details!',
+      ],
+      status: "More to come.",
     },
-    footer: { study: 'Computer Science @ Monash University', top: 'Back to top', copyright: 'Jerry Yang' },
-    notice: { email: 'Email contact details will be added soon.', link: 'This link will be added soon.' },
-    meta: { title: 'Jerry Yang · 杨子豪 — Computer Science Portfolio', description: 'Jerry Yang is a Computer Science student at Monash University specialising in Algorithms and Software, with interests in mathematics and modern web development.', social: 'Algorithms, software engineering and modern web development. Explore Jerry Yang’s education, skills and independent project.' },
+    footer: {
+      study: "Computer Science @ Monash University",
+      top: "Back to top",
+      copyright: "Jerry Yang",
+    },
+    notice: {
+      email: "Email contact details will be added soon.",
+      link: "This link will be added soon.",
+    },
+    meta: {
+      title: "Jerry Yang · 杨子豪 — Computer Science Portfolio",
+      description:
+        "Jerry Yang is a Computer Science student at Monash University specialising in Algorithms and Software, with interests in mathematics and modern web development.",
+      social:
+        "Algorithms, software engineering and modern web development. Explore Jerry Yang’s education, skills and independent project.",
+    },
   },
   zh: {
-    skip: '跳至正文', location: '澳大利亚 · 墨尔本',
-    nav: { home: '首页', about: '关于我', education: '教育背景', project: '项目', skills: '技术栈', experience: '就业', contact: '联系我', main: '主导航', mobile: '移动端导航', open: '展开菜单', close: '收起菜单', language: '选择语言', brand: '杨子豪，返回首页' },
-    hero: { eyebrow: '计算机科学 · 莫纳什大学', roles: '计算机科学本科生\n算法 · 软件工程 · 全栈开发', intro: '我是莫纳什大学的计算机科学学生，专注于算法、软件工程、数学与 Web 开发。我喜欢把想法做成实用的软件产品，也乐于探索软件系统背后的原理。', project: '查看项目', about: '关于我', scroll: '向下探索' },
-    visual: { algorithms: '算法', software: '软件工程', mathematics: '数学', fullstack: '全栈开发', caption: '连接想法，构建软件。' },
-    about: { personalLink: '想看些好玩的?', label: '关于我', curiosity: '好奇心', title: '探索理论，\n也把想法变成现实。', p1: '你好，我是杨子豪，就读于莫纳什大学计算机科学本科，专修算法与软件，同时学习数学和 Web 开发。', p2: '我对理论计算机科学与实际开发之间的联系充满兴趣：既想理解算法为什么有效，也希望把这些理解转化为有用的软件。目前，我尤其关注算法、软件工程与现代 Web 应用开发。', p3: '在推进个人项目的同时，我保持着 70+ WAM 的 Distinction 学业平均水平。', interests: ['算法', '软件工程', '全栈开发', '数学'] },
-    education: { label: '教育背景', title: '扎实积累，持续探索。', university: '莫纳什大学', degree: '计算机科学学士', specialisation: '专业方向', specialisationValue: '算法与软件', study: '辅修（Minor）', studyValue: '数学 · Web 开发', result: '学业成绩', average: 'Distinction 平均水平', wam: '加权平均分', badge: '本科在读' },
-    project: { label: '精选项目', title: '让想法成为可交互的应用。', intro: '一个融合传统文化与现代代码的独立项目。', independent: '独立开发项目', view: '查看项目', preview: '项目概念示意图', demo: '在线演示', source: 'GitHub', bilingual: '中英双语体验', responsive: '响应式 Web 界面', caption: '传统文化 × 现代技术', elements: '五行相生', wood: '木', fire: '火', earth: '土', metal: '金', water: '水' },
-    skills: { label: '技术栈', title: '将想法落地的工具。', intro: '主要使用的语言、工具与学习领域。' },
-    experience: { label: '职业历程', title: '就业经历' },
-    contact: { label: '联系我', title: '一起把想法，\n做成有价值的作品。', text: '如果你对软件、算法、Web 开发感兴趣，或希望交流潜在的合作与工作机会，欢迎联系我。', email: '邮箱', github: 'GitHub', linkedin: 'LinkedIn', placeholder: '联系方式即将补充。', emailAria: '邮箱 — 联系方式待补充', githubAria: 'GitHub — 链接待补充', linkedinAria: 'LinkedIn — 链接待补充', demoAria: '在线演示 — 链接待补充' },
+    skip: "跳至正文",
+    location: "澳大利亚 · 墨尔本",
+    nav: {
+      home: "首页",
+      about: "关于我",
+      education: "教育背景",
+      project: "项目",
+      skills: "技术栈",
+      experience: "就业",
+      contact: "联系我",
+      main: "主导航",
+      mobile: "移动端导航",
+      open: "展开菜单",
+      close: "收起菜单",
+      language: "选择语言",
+      brand: "杨子豪，返回首页",
+    },
+    hero: {
+      eyebrow: "计算机科学 · 莫纳什大学",
+      roles: "计算机科学本科生\n算法 · 软件工程 · 全栈开发",
+      intro:
+        "我是莫纳什大学的计算机科学学生，专注于算法、软件工程、数学与 Web 开发。我喜欢把想法做成实用的软件产品，也乐于探索软件系统背后的原理。",
+      project: "查看项目",
+      about: "关于我",
+      scroll: "向下探索",
+    },
+    visual: {
+      algorithms: "算法",
+      software: "软件工程",
+      mathematics: "数学",
+      fullstack: "全栈开发",
+      caption: "连接想法，构建软件。",
+    },
+    about: {
+      personalLink: "想看些好玩的?",
+      label: "关于我",
+      curiosity: "好奇心",
+      title: "探索理论，\n也把想法变成现实。",
+      p1: "你好，我是杨子豪，就读于莫纳什大学计算机科学本科，专修算法与软件，同时学习数学和 Web 开发。",
+      p2: "我对理论计算机科学与实际开发之间的联系充满兴趣：既想理解算法为什么有效，也希望把这些理解转化为有用的软件。目前，我尤其关注算法、软件工程与现代 Web 应用开发。",
+      p3: "在推进个人项目的同时，我保持着 70+ WAM 的 Distinction 学业平均水平。",
+      interests: ["算法", "软件工程", "全栈开发", "数学"],
+    },
+    education: {
+      label: "教育背景",
+      title: "扎实积累，持续探索。",
+      university: "莫纳什大学",
+      degree: "计算机科学学士",
+      specialisation: "专业方向",
+      specialisationValue: "算法与软件",
+      study: "辅修（Minor）",
+      studyValue: "数学 · Web 开发",
+      result: "学业成绩",
+      average: "Distinction 平均水平",
+      wam: "加权平均分",
+      badge: "本科在读",
+    },
+    project: {
+      label: "精选项目",
+      title: "让想法成为可交互的应用。",
+      intro: "一个融合传统文化与现代代码的独立项目。",
+      independent: "独立开发项目",
+      view: "查看项目",
+      preview: "项目概念示意图",
+      demo: "在线演示",
+      videoDemo: "项目视频演示",
+      openVideo: "打开视频",
+      videoUnavailable: "视频暂时无法加载。",
+      source: "GitHub",
+      bilingual: "中英双语体验",
+      responsive: "响应式 Web 界面",
+      caption: "传统文化 × 现代技术",
+      elements: "五行相生",
+      wood: "木",
+      fire: "火",
+      earth: "土",
+      metal: "金",
+      water: "水",
+    },
+    skills: {
+      label: "技术栈",
+      title: "将想法落地的工具。",
+      intro: "主要使用的语言、工具与学习领域。",
+    },
+    experience: { label: "职业历程", title: "就业经历" },
+    contact: {
+      label: "联系我",
+      title: "一起把想法，\n做成有价值的作品。",
+      text: "如果你对软件、算法、Web 开发感兴趣，或希望交流潜在的合作与工作机会，欢迎联系我。",
+      email: "邮箱",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+      placeholder: "联系方式即将补充。",
+      emailAria: "邮箱 — 联系方式待补充",
+      githubAria: "GitHub — 链接待补充",
+      linkedinAria: "LinkedIn — 链接待补充",
+      demoAria: "在线演示 — 链接待补充",
+    },
     // 在 paragraphs 中填写个性化文字，每个字符串是一段；写好后可清空 status。
     personal: {
-      label: '生活与随想',
-      title: '另一面的我',
-      paragraphs: ['我叫卷卷，来自北京，ENTP/ENTJ反复横跳人格，工作日J人周末P人-_-。我的爱好：羽毛球，篮球，各类游戏尤其瓦，听歌看演唱会，养猫（在墨尔本两猫两狗，在北京两猫），做饭，算命，看剧...数不清了。总之，这只是冰山一角，后续精彩内容给我下offer解锁'],
-      status: '待续。',
+      label: "生活与随想",
+      title: "另一面的我",
+      paragraphs: [
+        "我叫卷卷，来自北京，ENTP/ENTJ反复横跳人格，工作日J人周末P人-_-。我的爱好：羽毛球，篮球，各类游戏尤其瓦，听歌看演唱会，养猫（在墨尔本两猫两狗，在北京两猫），做饭，算命，看剧...数不清了。总之，这只是冰山一角，后续精彩内容给我下offer解锁",
+      ],
+      status: "待续。",
     },
-    footer: { study: '计算机科学 @ 莫纳什大学', top: '返回顶部', copyright: '杨子豪' },
-    notice: { email: '邮箱地址待补充，敬请期待。', link: '链接待补充，敬请期待。' },
-    meta: { title: '杨子豪 · Jerry Yang — 计算机科学个人作品集', description: '杨子豪就读于莫纳什大学计算机科学本科，专修算法与软件，同时学习数学与 Web 开发。了解他的教育背景、技术栈与独立项目。', social: '算法、软件工程与现代 Web 开发。了解杨子豪的教育背景、技术栈与独立项目。' },
+    footer: {
+      study: "计算机科学 @ 莫纳什大学",
+      top: "返回顶部",
+      copyright: "杨子豪",
+    },
+    notice: {
+      email: "邮箱地址待补充，敬请期待。",
+      link: "链接待补充，敬请期待。",
+    },
+    meta: {
+      title: "杨子豪 · Jerry Yang — 计算机科学个人作品集",
+      description:
+        "杨子豪就读于莫纳什大学计算机科学本科，专修算法与软件，同时学习数学与 Web 开发。了解他的教育背景、技术栈与独立项目。",
+      social:
+        "算法、软件工程与现代 Web 开发。了解杨子豪的教育背景、技术栈与独立项目。",
+    },
   },
 };

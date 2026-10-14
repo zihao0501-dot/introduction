@@ -23,6 +23,19 @@ Open `http://127.0.0.1:4173`. Serve the site over HTTP rather than opening the H
 
 To add a project, append an entry to `projects` with a unique `id`, English and Chinese content, and its demo/source URLs. Set `previewImage` to a local image URL, such as `./assets/fortune-preview.webp`, to replace the abstract diagram. Add the image file under `assets/`. The built-in visual is a conceptual Five Elements diagram, not a screenshot of a deployed application. Project technologies have not been inferred.
 
+## Project demo videos / 项目演示视频
+
+Set a project's `previewVideo` in `content.js` to a local MP4/WebM path or an HTTPS video file URL. Put local files in `assets/`; `build-site.mjs` includes that directory when publishing. MP4 encoded with H.264 is a suitable default. YouTube/Bilibili page URLs are not direct video files: keep those in `demo` to open them as external links.
+
+```js
+previewVideo: "./assets/coursey-demo.mp4",
+previewImage: "./assets/coursey-cover.webp", // optional video poster
+```
+
+填写 `previewVideo` 后，项目预览区会显示带播放、暂停、音量与全屏控制的视频；手机端支持行内播放，不自动播放。`previewImage` 可选，用作视频封面。将 `previewVideo` 设为 `null` 即恢复图片或占位图，原来的 `demo` 在线演示链接仍可独立填写。没有准备封面时，可将 `previewImage` 也设为 `null`。
+
+The player takes precedence over the image, has a 16:9 frame with uncropped video, and pauses other project videos when played. If the file fails to load, it shows a localized message and an open-video link. Adding a video is optional; no sample media is published.
+
 English is the default. The chosen language is saved under `jerry-portfolio-language` in localStorage and restored after reload. If browser storage is blocked, language switching still works for the current page. Navigation, accessible labels, metadata and notices also translate.
 
 The top navigation includes **Experience / 就业**. A separate **Beyond the code / 另一面的我** link in About jumps to the personal section; it is intentionally absent from the top navigation.

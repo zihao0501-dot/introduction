@@ -4,7 +4,7 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const enabled = () => cursor.matches && !reduced.matches;
 
 export function setupSurfaceInteractions() {
-  document.querySelectorAll('.project-preview, .education-card').forEach((surface) => {
+  document.querySelectorAll('.project-preview:not(.project-preview-video), .education-card').forEach((surface) => {
     if (surface.dataset.interactive) return;
     surface.dataset.interactive = 'true';
     const reset = () => ['--px', '--py', '--rx', '--ry'].forEach((key) => surface.style.removeProperty(key));
